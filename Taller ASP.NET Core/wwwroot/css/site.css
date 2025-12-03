@@ -1,0 +1,389 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* ==================== LISTA DE TAREAS ==================== */
+
+.task-list {
+    min-height: 400px;
+}
+
+/* ==================== TASK CARD (LAYOUT CORREGIDO) ==================== */
+
+.task-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+    .task-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+        border-color: #0d6efd;
+    }
+
+    .task-card.selected {
+        border-color: #0d6efd;
+        background-color: #f8f9fa;
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    }
+
+    .task-card.completed {
+        opacity: 0.7;
+        background-color: #f8f9fa;
+    }
+
+        .task-card.completed .task-title {
+            text-decoration: line-through;
+            color: #6c757d;
+        }
+
+/* ==================== COMPONENTES DE LA TARJETA ==================== */
+.task-checkbox {
+    flex-shrink: 0;
+    z-index: 20 !important;
+    position: relative;
+    padding: 5px;
+}
+
+    .task-checkbox input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        position: relative;
+        z-index: 21 !important;
+    }
+
+    .task-checkbox form {
+        margin: 0;
+    }
+
+/* Contenido - CURSOR POINTER */
+.task-content {
+    flex-grow: 1;
+    min-width: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.task-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.task-description {
+    font-size: 0.9rem;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Indicador de imagen */
+.task-image-indicator {
+    flex-shrink: 0;
+    font-size: 1.3rem;
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* ==================== DRAG HANDLE (ARREGLADO) ==================== */
+
+.task-drag-handle {
+    flex-shrink: 0;
+    padding: 8px 6px;
+    cursor: move !important;
+    cursor: -webkit-grab !important;
+    cursor: grab !important;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    z-index: 15 !important;
+    position: relative;
+    margin-left: auto; /* Empuja a la derecha */
+}
+
+    .task-drag-handle:hover {
+        background-color: rgba(13, 110, 253, 0.1);
+        border-radius: 4px;
+    }
+
+    .task-drag-handle:active {
+        cursor: -webkit-grabbing !important;
+        cursor: grabbing !important;
+    }
+
+    .task-drag-handle i {
+        font-size: 1.3rem;
+        color: #6c757d;
+        display: block;
+        pointer-events: none;
+    }
+
+/* ==================== SORTABLE.JS ANIMATIONS ==================== */
+
+.sortable-ghost {
+    opacity: 0.3 !important;
+    background-color: #e9ecef !important;
+    border: 2px dashed #0d6efd !important;
+}
+
+.sortable-chosen {
+    background-color: #f8f9fa !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+    transform: scale(1.02);
+}
+
+.sortable-drag {
+    opacity: 0.8;
+    cursor: grabbing !important;
+}
+
+/* ==================== DETALLE DE TAREA ==================== */
+
+.task-detail-card {
+    padding: 20px;
+}
+
+    .task-detail-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+    .task-title {
+        font-size: 1rem;
+    }
+
+    .task-description {
+        font-size: 0.85rem;
+    }
+
+    .task-card {
+        padding: 10px;
+    }
+}
+
+/* ==================== BADGES ==================== */
+
+.badge {
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
+}
+
+/* ==================== FORMULARIOS ==================== */
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* ==================== ANIMACIONES ==================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-card {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ==================== ESTILOS PARA BOOKS (BIBLIOTECA) ==================== */
+
+.book-list {
+    min-height: 400px;
+}
+
+/* ==================== BOOK CARD (LAYOUT CORREGIDO) ==================== */
+
+.book-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+    .book-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+        border-color: #0d6efd;
+    }
+
+    .book-card.selected {
+        border-color: #0d6efd;
+        background-color: #f8f9fa;
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    }
+
+    .book-card.completed {
+        opacity: 0.7;
+        background-color: #f8f9fa;
+    }
+
+        .book-card.completed .book-title {
+            color: #6c757d;
+        }
+
+/* ==================== COMPONENTES DE LA TARJETA DE LIBRO ==================== */
+.book-checkbox {
+    flex-shrink: 0;
+    z-index: 20 !important;
+    position: relative;
+    padding: 5px;
+}
+
+    .book-checkbox input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        position: relative;
+        z-index: 21 !important;
+    }
+
+    .book-checkbox form {
+        margin: 0;
+    }
+
+/* Contenido - CURSOR POINTER */
+.book-content {
+    flex-grow: 1;
+    min-width: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.book-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.book-author {
+    font-size: 0.9rem;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Indicador de portada */
+.book-image-indicator {
+    flex-shrink: 0;
+    font-size: 1.3rem;
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* ==================== DRAG HANDLE (ARREGLADO) ==================== */
+
+.book-drag-handle {
+    flex-shrink: 0;
+    padding: 8px 6px;
+    cursor: move !important;
+    cursor: -webkit-grab !important;
+    cursor: grab !important;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    z-index: 15 !important;
+    position: relative;
+    margin-left: auto;
+}
+
+    .book-drag-handle:hover {
+        background-color: rgba(13, 110, 253, 0.1);
+        border-radius: 4px;
+    }
+
+    .book-drag-handle:active {
+        cursor: -webkit-grabbing !important;
+        cursor: grabbing !important;
+    }
+
+    .book-drag-handle i {
+        font-size: 1.3rem;
+        color: #6c757d;
+        display: block;
+        pointer-events: none;
+    }
+
+/* ==================== DETALLE DE LIBRO ==================== */
+
+.book-detail-card {
+    padding: 20px;
+}
+
+    .book-detail-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+/* ==================== RESPONSIVE BOOKS ==================== */
+
+@media (max-width: 768px) {
+    .book-title {
+        font-size: 1rem;
+    }
+
+    .book-author {
+        font-size: 0.85rem;
+    }
+
+    .book-card {
+        padding: 10px;
+    }
+}
+
+.book-card {
+    animation: fadeIn 0.3s ease-in-out;
+}

@@ -1,0 +1,157 @@
+﻿@model Taller_ASP.NET_Core.Models.Book
+
+@{
+    ViewData["Title"] = "Nuevo Libro";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="bi bi-book"></i> Agregar Nuevo Libro</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                        <!-- Campo: Título -->
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label fw-bold">
+                                <i class="bi bi-card-heading"></i> Título *
+                            </label>
+                            <input asp-for="Title" 
+                                   class="form-control form-control-lg" 
+                                   placeholder="Ej: Cien años de soledad"
+                                   autofocus />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+
+                        <!-- Campo: Autor -->
+                        <div class="mb-3">
+                            <label asp-for="Author" class="form-label fw-bold">
+                                <i class="bi bi-person-fill"></i> Autor *
+                            </label>
+                            <input asp-for="Author" 
+                                   class="form-control" 
+                                   placeholder="Ej: Gabriel García Márquez" />
+                            <span asp-validation-for="Author" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <!-- Campo: ISBN -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ISBN" class="form-label fw-bold">
+                                    <i class="bi bi-upc-scan"></i> ISBN
+                                </label>
+                                <input asp-for="ISBN" 
+                                       class="form-control" 
+                                       placeholder="Ej: 978-0307474728" />
+                                <span asp-validation-for="ISBN" class="text-danger"></span>
+                            </div>
+
+                            <!-- Campo: Año -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Year" class="form-label fw-bold">
+                                    <i class="bi bi-calendar-event"></i> Año de Publicación
+                                </label>
+                                <input asp-for="Year" 
+                                       class="form-control" 
+                                       type="number"
+                                       placeholder="Ej: 1967" />
+                                <span asp-validation-for="Year" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Campo: Editorial -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Publisher" class="form-label fw-bold">
+                                    <i class="bi bi-building"></i> Editorial
+                                </label>
+                                <input asp-for="Publisher" 
+                                       class="form-control" 
+                                       placeholder="Ej: Editorial Sudamericana" />
+                                <span asp-validation-for="Publisher" class="text-danger"></span>
+                            </div>
+
+                            <!-- Campo: Género -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Genre" class="form-label fw-bold">
+                                    <i class="bi bi-tag"></i> Género
+                                </label>
+                                <input asp-for="Genre" 
+                                       class="form-control" 
+                                       placeholder="Ej: Realismo mágico" />
+                                <span asp-validation-for="Genre" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Campo: Descripción/Sinopsis -->
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label fw-bold">
+                                <i class="bi bi-text-paragraph"></i> Sinopsis
+                            </label>
+                            <textarea asp-for="Description" 
+                                      class="form-control" 
+                                      rows="5"
+                                      placeholder="Breve descripción o sinopsis del libro..."></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                            <small class="form-text text-muted">Máximo 2000 caracteres</small>
+                        </div>
+
+                        <!-- Campo: Portada -->
+                        <div class="mb-3">
+                            <label asp-for="ImageFile" class="form-label fw-bold">
+                                <i class="bi bi-image"></i> Portada del Libro (opcional)
+                            </label>
+                            <input asp-for="ImageFile" 
+                                   class="form-control" 
+                                   type="file" 
+                                   accept="image/*"
+                                   onchange="previewImage(this);" />
+                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                            <small class="form-text text-muted">Formatos: JPG, PNG, GIF, WebP</small>
+
+                            <!-- Preview de la portada -->
+                            <div id="imagePreview" class="mt-2" style="display:none;">
+                                <img id="preview" src="" alt="Vista previa" class="img-thumbnail" style="max-width: 300px;">
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-secondary btn-lg">
+                                <i class="bi bi-x-circle"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-save"></i> Guardar Libro
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+        <script>
+            function previewImage(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById('preview').src = e.target.result;
+                        document.getElementById('imagePreview').style.display = 'block';
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
+}
