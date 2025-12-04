@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Taller ASP.NET Core.props" />
-</Project>

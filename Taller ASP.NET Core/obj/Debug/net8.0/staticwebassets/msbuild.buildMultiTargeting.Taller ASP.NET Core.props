@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Taller ASP.NET Core.props" />
-</Project>
