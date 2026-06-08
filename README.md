@@ -1,38 +1,43 @@
-# learning-biblioteca_aspnet
+# Biblioteca ASP.NET
 
-Proyecto educativo desarrollado con ASP.NET Core MVC para practicar una aplicación web de gestión de biblioteca personal.
+<div align="center">
 
-## Categoría
+![Learning](https://img.shields.io/badge/Tipo-Aprendizaje-0ea5e9?style=for-the-badge)
+![ASP.NET](https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![CRUD](https://img.shields.io/badge/Proyecto-CRUD-16a34a?style=for-the-badge)
 
-`learning-` — práctica técnica para aprender un framework o stack.
+**Practica de aprendizaje con ASP.NET Core MVC para sistema de biblioteca.**
 
-## Descripción
+</div>
 
-Aplicación web para organizar libros personales mediante operaciones CRUD, autenticación de usuarios e interfaz responsiva. El proyecto sirve como práctica de ASP.NET Core, Entity Framework Core, Identity y estructura MVC.
+---
 
-## Tecnologías
+## Contexto
 
-- ASP.NET Core
-- C#
-- Entity Framework Core
-- SQLite
-- ASP.NET Core Identity
-- Razor Views
-- Bootstrap
+Aplicacion web educativa para organizar libros personales mediante operaciones CRUD, autenticacion de usuarios e interfaz responsiva.
 
-## Funcionalidades generales
+## Proposito
 
-- Registro e inicio de sesión.
-- Gestión de libros.
-- Alta, consulta, edición y eliminación.
-- Búsqueda y filtrado.
+- Practicar el patron MVC.
+- Usar Entity Framework Core e Identity.
+- Construir una aplicacion CRUD completa.
+- Reforzar desarrollo web con C# y ASP.NET.
+
+## Tecnologias
+
+![ASP.NET](https://img.shields.io/badge/ASP.NET-512bd4?style=flat-square&logo=dotnet&logoColor=white)
+![CSharp](https://img.shields.io/badge/C%23-7c3aed?style=flat-square)
+![SQLite](https://img.shields.io/badge/SQLite-2563eb?style=flat-square&logo=sqlite&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
+
+## Funcionalidades
+
+- Registro e inicio de sesion.
+- Gestion de libros.
+- Busqueda y filtrado.
 - Carga de portada.
 - Interfaz responsiva.
 
-## Objetivo de aprendizaje
+## Estado
 
-Practicar el patrón MVC, Entity Framework Core, autenticación con Identity y construcción de aplicaciones CRUD completas.
-
-## Nota de seguridad
-
-No publicar credenciales reales ni información sensible en el repositorio.
+Proyecto de aprendizaje para practicar aplicaciones web completas.
