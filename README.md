@@ -1,102 +1,38 @@
-# Mi Biblioteca Personal - Proyecto ASP.NET Core
+# learning-biblioteca_aspnet
 
-Este repositorio contiene un proyecto de gestión de biblioteca personal desarrollado con ASP.NET Core, 
-implementando el patrón Modelo-Vista-Controlador (MVC) para organizar y catalogar tu colección de libros.
+Proyecto educativo desarrollado con ASP.NET Core MVC para practicar una aplicación web de gestión de biblioteca personal.
 
-## 📚 Características principales
+## Categoría
 
-- **Aplicación web construida con ASP.NET Core MVC**
-- **Autenticación de usuarios** (cada usuario gestiona su propia biblioteca)
-- **Gestión completa de inventario de libros** con información detallada:
-  - Título y Autor
-  - ISBN
-  - Editorial y Año de Publicación
-  - Género literario
-  - Sinopsis/Descripción
-  - Portada del libro (imagen)
-  - Estado de lectura (leído/pendiente)
-  
-- **Funcionalidades CRUD completas:**
-  - Crear nuevos registros de libros
-  - Visualizar biblioteca completa
-  - Actualizar información de libros
-  - Eliminar libros del inventario
+`learning-` — práctica técnica para aprender un framework o stack.
 
-- **Características adicionales:**
-  - Búsqueda por título, autor, ISBN o género
-  - Filtrado por estado de lectura
-  - Drag & Drop para reordenar libros
-  - Upload de portadas de libros
+## Descripción
 
-## 🚀 Instrucciones para ejecutar el proyecto
+Aplicación web para organizar libros personales mediante operaciones CRUD, autenticación de usuarios e interfaz responsiva. El proyecto sirve como práctica de ASP.NET Core, Entity Framework Core, Identity y estructura MVC.
 
-### 1. Clonar el repositorio
-```bash
-git clone https://github.com/Sofifdz/ASP.NET-Core.git
-cd ASP.NET-Core
-```
+## Tecnologías
 
-### 2. Abrir el proyecto
-Abre la solución en Visual Studio o Visual Studio Code
+- ASP.NET Core
+- C#
+- Entity Framework Core
+- SQLite
+- ASP.NET Core Identity
+- Razor Views
+- Bootstrap
 
-### 3. Configurar la base de datos
-- La aplicación usa SQLite por defecto (no requiere configuración adicional)
-- Ejecuta las migraciones para crear la base de datos:
-```bash
-dotnet ef migrations add InitialCreateBooks
-dotnet ef database update
-```
+## Funcionalidades generales
 
-### 4. Ejecutar la aplicación
-```bash
-dotnet run
-```
-Accede a la aplicación en: **https://localhost:7236**
+- Registro e inicio de sesión.
+- Gestión de libros.
+- Alta, consulta, edición y eliminación.
+- Búsqueda y filtrado.
+- Carga de portada.
+- Interfaz responsiva.
 
-## 🛠️ Tecnologías utilizadas
+## Objetivo de aprendizaje
 
-- **ASP.NET Core 8.0**
-- **Entity Framework Core**
-- **SQLite** (base de datos)
-- **ASP.NET Core Identity** (autenticación)
-- **Bootstrap 5** (diseño responsivo)
-- **Bootstrap Icons**
-- **SortableJS** (drag & drop)
+Practicar el patrón MVC, Entity Framework Core, autenticación con Identity y construcción de aplicaciones CRUD completas.
 
-## 🔐 Credenciales de prueba
+## Nota de seguridad
 
-- **Usuario:** `prueba@gmail.com`
-- **Contraseña:** `Prueba01.`
-
-## 📖 Estructura del proyecto
-
-```
-Taller ASP.NET Core/
-├── Controllers/        # BooksController, HomeController
-├── Models/            # Book.cs
-├── Views/             # Vistas Razor (Books, Home, Shared)
-├── Data/              # ApplicationDbContext
-├── wwwroot/           # Archivos estáticos (CSS, JS, imágenes)
-└── Program.cs         # Configuración de la aplicación
-```
-
-## 🎯 Funcionalidades destacadas
-
-### Panel de Biblioteca
-- Visualización en tarjetas con información resumida
-- Vista detallada al hacer clic en cada libro
-- Indicadores visuales de estado de lectura
-
-### Formularios inteligentes
-- Validación de datos en cliente y servidor
-- Preview de portadas antes de guardar
-- Campos específicos para datos bibliográficos
-
-### Experiencia de usuario
-- Interfaz responsiva que se adapta a cualquier dispositivo
-- Búsqueda en tiempo real
-- Animaciones suaves y feedback visual
-
----
-
-**Desarrollado como proyecto educativo de ASP.NET Core MVC**
+No publicar credenciales reales ni información sensible en el repositorio.
